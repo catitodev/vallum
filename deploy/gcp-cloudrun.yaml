@@ -1,0 +1,70 @@
+# VALLUM — GCP Cloud Run Deployment Configuration
+
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: vallum-api
+  annotations:
+    run.googleapis.com/ingress: all
+    run.googleapis.com/execution-environment: gen2
+spec:
+  template:
+    metadata:
+      annotations:
+        run.googleapis.com/cpu-throttling: "false"
+        run.googleapis.com/memory: "2Gi"
+        run.googleapis.com/cpu: "2"
+        autoscaling.knative.dev/minScale: "1"
+        autoscaling.knative.dev/maxScale: "10"
+    spec:
+      containerConcurrency: 100
+      timeoutSeconds: 300
+      serviceAccountName: vallum-runtime@YOUR_PROJECT_ID.iam.gserviceaccount.com
+      containers:
+        - image: REGION-docker.pkg.dev/YOUR_PROJECT_ID/vallum/vallum-api:latest
+          ports:
+            - containerPort: 8000
+          env:
+            - name: ENV
+              value: "production"
+            - name: GCP_PROJECT_ID
+              value: "YOUR_PROJECT_ID"
+            - name: GCP_SECRET_MANAGER_ENABLED
+              value: "true"
+            - name: GEMINI_MODEL
+              value: "gemini-1.5-pro"
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: database-url
+                  key: latest
+            - name: GEMINI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: gemini-api-key
+                  key: latest
+            - name: AUDIT_CHAIN_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: audit-chain-secret
+                  key: latest
+          resources:
+            limits:
+              cpu: "2"
+              memory: "2Gi"
+            requests:
+              cpu: "1"
+              memory: "1Gi"
+          startupProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            failureThreshold: 6
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            periodSeconds: 10
+            failureThreshold: 3

@@ -1,0 +1,90 @@
+# VALLUM — .gitignore
+# PROTECTS: secrets, credentials, local data, build artifacts
+
+# SECRETS & CREDENTIALS (CRITICAL)
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+credentials/
+secrets/
+config/local*
+
+# IDE & AI TOOLING (NEVER COMMIT)
+.kiro/
+.spec/
+.cursor/
+.vscode/
+.idea/
+
+# PYTHON
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# VIRTUAL ENVIRONMENTS
+venv/
+ENV/
+env/
+.venv/
+
+# TEST & CACHE
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# IDEs & EDITORS
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# DATABASES
+*.db
+*.sqlite
+*.sqlite3
+
+# LOGS
+*.log
+logs/
+
+# TEST COVERAGE
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+
+# DEPLOYMENT
+*.tfstate
+*.tfstate.*
+.terraform/
+*.tfvars
+
+# LOBSTER TRAP BINARIES
+lobster-trap/lobstertrap
+lobster-trap/*.exe
