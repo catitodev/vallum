@@ -240,9 +240,37 @@ MIT License — See [LICENSE](LICENSE)
 
 ---
 
+## 👥 Team MycoGuard
+
+**Intergenerational self-taught developers — father and daughter building the future of AI security together.**
+
+We are a two-person team driven by curiosity, discipline, and the belief that cybersecurity knowledge should be accessible across generations. From reverse engineering to agentic AI, we learn by building — and we build to protect.
+
+| | Clarkson Bartalini | Iara Bartalini |
+|---|---|---|
+| **Role** | Lead Engineer & Architect | Security Research & Development |
+| **GitHub** | [@catitodev](https://github.com/catitodev) | [@iaiamaga](https://github.com/iaiamaga) |
+| **LinkedIn** | [Clarkson Bartalini](https://www.linkedin.com/in/clarkson-luiz-buriche-bartalini-80446a6b) | [Iara Bartalini](https://www.linkedin.com/in/iaiakedemy/) |
+
+---
+
+## 👥 Time MycoGuard
+
+**Desenvolvedores autodidatas intergeracionais — pai e filha construindo o futuro da segurança de IA juntos.**
+
+Somos uma equipe de duas pessoas movida por curiosidade, disciplina e a crença de que o conhecimento em cibersegurança deve ser acessível entre gerações. De engenharia reversa a IA agêntica, aprendemos construindo — e construímos para proteger.
+
+| | Clarkson Bartalini | Iara Bartalini |
+|---|---|---|
+| **Função** | Engenheiro Líder & Arquiteto | Pesquisa & Desenvolvimento em Segurança |
+| **GitHub** | [@catitodev](https://github.com/catitodev) | [@iaiamaga](https://github.com/iaiamaga) |
+| **LinkedIn** | [Clarkson Bartalini](https://www.linkedin.com/in/clarkson-luiz-buriche-bartalini-80446a6b) | [Iara Bartalini](https://www.linkedin.com/in/iaiakedemy/) |
+
+---
+
 <p align="center">
-  <b>Built with 🔱 by <a href="https://github.com/catitodev">@catitodev</a></b><br>
-  <i>Team MycoGuard — TechEx Intelligent Enterprise Solutions Hackathon 2026</i><br>
+  <b>Built with 🔱 by Team MycoGuard</b><br>
+  <i>TechEx Intelligent Enterprise Solutions Hackathon 2026</i><br>
   Track 1: Agent Security & AI Governance — Powered by Veea
 </p>
 
@@ -250,3 +278,4 @@ MIT License — See [LICENSE](LICENSE)
   <img src="https://img.shields.io/badge/Made%20with-🔱-00f0ff?style=flat-square" alt="Made with Vallum">
   <img src="https://img.shields.io/badge/For-TechEx%202026-blue?style=flat-square" alt="For TechEx 2026">
 </p>
+
