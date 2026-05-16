@@ -14,7 +14,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
 from vallum.chain import Chain
-from vallum.config import settings
+from vallum.config import get_settings
 from vallum.shield import Shield
 from vallum.spear import Spear
 

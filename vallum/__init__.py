@@ -15,7 +15,19 @@ __version__ = "0.1.0"
 __author__ = "Vallum Team"
 __license__ = "MIT"
 
-from vallum.config import settings
+from vallum.config import get_settings
+
+# Lazy settings — don't crash on import
+settings = None
+
+
+def _get_settings():
+    global settings
+    if settings is None:
+        settings = get_settings()
+    return settings
+
+
 from vallum.shield import Shield, GeminiIntentClassifier
 from vallum.spear import Spear, MutationEngine
 from vallum.chain import Chain

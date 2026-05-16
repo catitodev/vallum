@@ -12,7 +12,11 @@ from dataclasses import dataclass, asdict
 from enum import Enum
 import sqlite3
 
-from vallum.config import settings
+from vallum.config import get_settings
+
+
+def _settings():
+    return get_settings()
 
 
 class EventType(Enum):
@@ -45,9 +49,9 @@ class HashChain:
     """Immutable hash chain for tamper-evident audit logging."""
 
     def __init__(self, secret: Optional[str] = None):
-        self.secret = secret or settings.audit_chain_secret
+        self.secret = secret or _settings().audit_chain_secret
         if not self.secret:
-            if settings.is_production:
+            if _settings().is_production:
                 raise RuntimeError(
                     "AUDIT_CHAIN_SECRET is required in production. "
                     "Set it via environment variable or GCP Secret Manager."
@@ -120,7 +124,7 @@ class ChainDatabase:
     """SQLite backend for audit event persistence."""
 
     def __init__(self, db_path: Optional[str] = None):
-        self.db_path = db_path or settings.database_url.replace("sqlite:///", "")
+        self.db_path = db_path or _settings().database_url.replace("sqlite:///", "")
         self._init_db()
 
     def _init_db(self):

@@ -660,7 +660,11 @@ class CrewAIRedTeam:
 
     @property
     def available(self) -> bool:
-        return self._available and bool(settings.gemini_api_key)
+        try:
+            from vallum.config import get_settings
+            return self._available and bool(get_settings().gemini_api_key)
+        except Exception:
+            return False
 
     def generate_adaptive_payloads(self, target_description: str, previous_results: List[SpearTestResult]) -> List[str]:
         """Use CrewAI agents to generate adaptive attack payloads based on previous results."""

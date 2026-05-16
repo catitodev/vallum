@@ -11,7 +11,11 @@ from typing import Dict, Any, Optional, List
 from dataclasses import dataclass
 from enum import Enum
 
-from vallum.config import settings
+from vallum.config import get_settings
+
+
+def _settings():
+    return get_settings()
 
 
 class ShieldAction(Enum):
@@ -72,15 +76,15 @@ PROMPT TO ANALYZE:
         if self._model is None:
             try:
                 import google.generativeai as genai
-                genai.configure(api_key=settings.gemini_api_key)
-                self._model = genai.GenerativeModel(settings.gemini_model)
+                genai.configure(api_key=_settings().gemini_api_key)
+                self._model = genai.GenerativeModel(_settings().gemini_model)
             except Exception:
                 self._model = False
         return self._model
 
     def classify(self, prompt: str) -> Optional[Dict[str, Any]]:
         """Classify prompt intent using Gemini. Returns None if unavailable."""
-        if not settings.gemini_api_key:
+        if not _settings().gemini_api_key:
             return None
 
         model = self._get_model()
@@ -110,7 +114,7 @@ class Shield:
     """SHIELD — The Wall Itself. Real-time prompt inspection via Lobster Trap + Gemini."""
 
     def __init__(self, lobster_trap_url: Optional[str] = None, use_gemini: bool = True):
-        self.lobster_trap_url = lobster_trap_url or settings.lobster_trap_url
+        self.lobster_trap_url = lobster_trap_url or _settings().lobster_trap_url
         self.client = httpx.AsyncClient(timeout=10.0)
         self._gemini = GeminiIntentClassifier() if use_gemini else None
 
@@ -147,7 +151,7 @@ class Shield:
             elif intent.risk_score > 0.4:
                 action = ShieldAction.LOG
                 reason = f"Medium risk detected locally: {intent.detected_intent}"
-            elif settings.is_production:
+            elif _settings().is_production:
                 action = ShieldAction.DENY
                 reason = f"Shield proxy unavailable in production: {str(e)}"
             else:

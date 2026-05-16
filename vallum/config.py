@@ -45,4 +45,12 @@ def get_settings() -> Settings:
     return Settings()
 
 
-settings = get_settings()
+# Lazy — only instantiate when first accessed
+settings = None
+
+
+def _init_settings():
+    global settings
+    if settings is None:
+        settings = get_settings()
+    return settings
