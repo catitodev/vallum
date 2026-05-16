@@ -1,0 +1,16 @@
+# VALLUM — Cloud Run Production Dependencies (minimal)
+# Full deps in requirements.txt; this is optimized for fast builds.
+
+# Core Framework
+fastapi>=0.109.0,<1.0.0
+uvicorn>=0.27.0,<1.0.0
+pydantic>=2.5.3,<3.0.0
+
+# HTTP Client
+httpx>=0.26.0,<1.0.0
+
+# AI (optional — Gemini intent classification)
+google-generativeai>=0.3.2,<1.0.0
+
+# Utilities
+python-dotenv>=1.0.0,<2.0.0
