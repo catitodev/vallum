@@ -13,7 +13,7 @@ import httpx
 
 # --- Configuration ---
 # In production (Cloud Run), set VALLUM_API_URL env var
-API_BASE = os.getenv("VALLUM_API_URL", "http://localhost:8000")
+API_BASE = os.getenv("VALLUM_API_URL", "https://vallum-api-486371159640.us-central1.run.app")
 
 st.set_page_config(
     page_title="VALLUM — Agent Security Command Center",
