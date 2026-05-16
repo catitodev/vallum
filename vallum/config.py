@@ -29,7 +29,10 @@ class Settings:
         self.gcp_secret_manager_enabled = os.getenv("GCP_SECRET_MANAGER_ENABLED", "false").lower() == "true"
 
         if self.is_production and not self.gemini_api_key and not self.gcp_secret_manager_enabled:
-            raise RuntimeError("GEMINI_API_KEY or GCP Secret Manager required in production")
+            import logging
+            logging.getLogger(__name__).warning(
+                "GEMINI_API_KEY not set. SHIELD will use heuristic-only mode."
+            )
 
     @property
     def is_production(self) -> bool:
