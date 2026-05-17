@@ -22,6 +22,14 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
+# Force sidebar to stay open
+st.markdown("""
+<style>
+    [data-testid="collapsedControl"] { display: none; }
+    [data-testid="stSidebar"][aria-expanded="false"] { display: block; margin-left: 0; }
+</style>
+""", unsafe_allow_html=True)
+
 # --- Demo Data (shown when API is offline) ---
 
 DEMO_SCORECARD = {
