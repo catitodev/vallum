@@ -259,25 +259,23 @@ if page == "🏠 Overview":
     # Architecture card
     st.markdown("""
     <div style="background: linear-gradient(135deg, #0c1033 0%, #0f1538 100%); border: 1px solid rgba(0, 240, 255, 0.1); border-radius: 12px; padding: 2rem; margin: 1rem 0;">
-        <table style="width: 100%; border-collapse: collapse; text-align: center;">
-            <tr>
-                <td style="width: 33%; vertical-align: top; padding: 1rem;">
-                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🛡️</div>
-                    <h4 style="color: #00f0ff; margin: 0.3rem 0; font-size: 0.9rem;">SHIELD</h4>
-                    <p style="color: #8b92a8; font-size: 0.7rem; margin: 0;">Real-time prompt inspection<br>Gemini AI + Lobster Trap</p>
-                </td>
-                <td style="width: 33%; vertical-align: top; padding: 1rem;">
-                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">⚔️</div>
-                    <h4 style="color: #ff2a6d; margin: 0.3rem 0; font-size: 0.9rem;">SPEAR</h4>
-                    <p style="color: #8b92a8; font-size: 0.7rem; margin: 0;">11 ATLAS 2026 techniques<br>Mutation engine + CrewAI</p>
-                </td>
-                <td style="width: 33%; vertical-align: top; padding: 1rem;">
-                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">⛓️</div>
-                    <h4 style="color: #05ffa1; margin: 0.3rem 0; font-size: 0.9rem;">CHAIN</h4>
-                    <p style="color: #8b92a8; font-size: 0.7rem; margin: 0;">Immutable audit trails<br>SHA-256 hash-chain</p>
-                </td>
-            </tr>
-        </table>
+        <div style="display: flex; justify-content: space-around; text-align: center; flex-wrap: wrap; gap: 1rem;">
+            <div style="flex: 1; min-width: 180px;">
+                <div style="font-size: 2rem;">🛡️</div>
+                <h4 style="color: #00f0ff; margin: 0.3rem 0 0 0; font-size: 0.9rem;">SHIELD</h4>
+                <p style="color: #8b92a8; font-size: 0.7rem;">Real-time prompt inspection<br>Gemini AI + Lobster Trap</p>
+            </div>
+            <div style="flex: 1; min-width: 180px;">
+                <div style="font-size: 2rem;">⚔️</div>
+                <h4 style="color: #ff2a6d; margin: 0.3rem 0 0 0; font-size: 0.9rem;">SPEAR</h4>
+                <p style="color: #8b92a8; font-size: 0.7rem;">11 ATLAS 2026 techniques<br>Mutation engine + CrewAI</p>
+            </div>
+            <div style="flex: 1; min-width: 180px;">
+                <div style="font-size: 2rem;">⛓️</div>
+                <h4 style="color: #05ffa1; margin: 0.3rem 0 0 0; font-size: 0.9rem;">CHAIN</h4>
+                <p style="color: #8b92a8; font-size: 0.7rem;">Immutable audit trails<br>SHA-256 hash-chain</p>
+            </div>
+        </div>
     </div>
     """, unsafe_allow_html=True)
 
