@@ -192,7 +192,9 @@ api_online = health is not None
 
 col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
-    st.image("docs/vallum_favicon.png", width=80)
+    subcol1, subcol2, subcol3 = st.columns([1, 1, 1])
+    with subcol2:
+        st.image("docs/vallum_favicon.png", width=90)
     st.markdown("""
     <div class="vallum-header" style="text-align: center; padding: 0 0 1rem 0;">
         <h1><span style="color: #00f0ff;">V</span>ALLUM</h1>
@@ -205,10 +207,11 @@ with col2:
 # --- Sidebar ---
 
 st.sidebar.markdown("---")
-st.sidebar.image("docs/vallum_favicon.png", width=60)
+scol1, scol2, scol3 = st.sidebar.columns([1, 2, 1])
+with scol2:
+    st.image("docs/vallum_favicon.png", width=90)
 st.sidebar.markdown("""
-<div style="text-align: center; padding: 0.5rem 0;">
-    <h2 style="color: #00f0ff; font-size: 1.3rem; margin: 0; letter-spacing: 0.2em;">VALLUM</h2>
+<div style="text-align: center; padding: 0.3rem 0;">
     <p style="color: #5a6178; font-size: 0.7rem; font-family: 'JetBrains Mono', monospace;">v0.1.0 · TechEx 2026</p>
 </div>
 """, unsafe_allow_html=True)
