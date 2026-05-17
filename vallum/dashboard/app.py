@@ -17,7 +17,7 @@ API_BASE = os.getenv("VALLUM_API_URL", "https://vallum-api-486371159640.us-centr
 
 st.set_page_config(
     page_title="VALLUM — Agent Security Command Center",
-    page_icon="🛡️",
+    page_icon="docs/vallum_favicon.png",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -493,8 +493,10 @@ elif page == "📊 Reports":
 st.markdown("""
 <div style="text-align: center; padding: 2rem 0; border-top: 1px solid rgba(0, 240, 255, 0.08); margin-top: 3rem;">
     <p style="color: #5a6178; font-size: 0.75rem; font-family: 'JetBrains Mono', monospace;">
-        VALLUM v0.1.0 · Team MycoGuard · TechEx Hackathon 2026<br>
-        Veea Lobster Trap · Google Gemini · MITRE ATLAS 2026 · CrewAI
+        © 2026 MIT License · Developed by MycoGuard Team<br>
+        TechEx Intelligent Enterprise Solutions Hackathon 2026<br>
+        Track 1: Agent Security & AI Governance — Powered by Veea<br><br>
+        <span style="color: #3a3f52;">Veea Lobster Trap · Google Gemini · MITRE ATLAS 2026 · CrewAI</span>
     </p>
 </div>
 """, unsafe_allow_html=True)
