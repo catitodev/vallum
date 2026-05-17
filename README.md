@@ -98,6 +98,20 @@ A single manipulated prompt can:
 
 ---
 
+## 🖥️ Live Dashboard
+
+<p align="center">
+  <a href="https://vallum.streamlit.app">
+    <img src="docs/vallum_dashboard_banner.png" alt="Vallum Dashboard" width="100%">
+  </a>
+</p>
+
+<p align="center">
+  <b>🔗 <a href="https://vallum.streamlit.app">vallum.streamlit.app</a></b> — Try it live, no installation required
+</p>
+
+---
+
 ## 🚀 Quick Start
 
 ### Prerequisites
