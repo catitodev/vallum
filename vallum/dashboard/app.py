@@ -194,7 +194,7 @@ col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
     subcol1, subcol2, subcol3 = st.columns([1, 1, 1])
     with subcol2:
-        st.image("docs/vallum_favicon.png", width=90)
+        st.image("docs/vallum_favicon.png", width=120)
     st.markdown("""
     <div class="vallum-header" style="text-align: center; padding: 0 0 1rem 0;">
         <h1><span style="color: #00f0ff;">V</span>ALLUM</h1>
